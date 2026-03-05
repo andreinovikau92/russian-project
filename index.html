@@ -311,7 +311,7 @@ textarea::placeholder { color: var(--muted); }
       <button class="ex" onclick="loadEx(5)">Дать ребёнку игрушку</button>
     </div>
 
-    <button class="btn" onclick="analyze()">Определить падежи &nbsp;·&nbsp; Analyze Cases &nbsp;⌃↵</button>
+    <button class="btn" onclick="analyze()">Определить падежи &nbsp;·&nbsp; Analyze Cases &nbsp;↵</button>
   </div>
 
   <!-- ── Results ─────────────────────────── -->
@@ -810,9 +810,9 @@ function loadEx(i) {
   analyze();
 }
 
-// Ctrl+Enter shortcut
+// Enter / Ctrl+Enter shortcut
 document.getElementById('inp').addEventListener('keydown', e => {
-  if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); analyze(); }
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); analyze(); }
 });
 </script>
 </body>
